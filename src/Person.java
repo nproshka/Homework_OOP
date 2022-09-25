@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Person {
 
     int age;
@@ -9,13 +11,13 @@ public class Person {
     String post;
 
     public Person(int age, String name, String city, int yearBirth, int monthBirth, int dayBirth, String post) {
-        this.age = age;
-        this.name = name;
-        this.city = city;
-        this.yearBirth = yearBirth;
+        this.age = Math.max(age, 0);
+        this.name = Objects.requireNonNullElse(name, "Информация не укзана");
+        this.city = Objects.requireNonNullElse(city, "Информация не укзана");
+        this.yearBirth = Math.max(yearBirth, 0);
         this.monthBirth = monthBirth;
         this.dayBirth = dayBirth;
-        this.post = post;
+        this.post = Objects.requireNonNullElse(post, "Информация не укзана");
     }
 
     public int getAge() {
