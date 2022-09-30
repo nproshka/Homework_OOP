@@ -2,13 +2,13 @@ import java.util.Objects;
 
 public class Person {
 
-    int age;
-    String name;
-    String city;
-    int yearBirth;
-    int monthBirth;
-    int dayBirth;
-    String post;
+    private int age;
+    private String name;
+    private String city;
+    private int yearBirth;
+    private int monthBirth;
+    private int dayBirth;
+    private String post;
 
     public Person(int age, String name, String city, int yearBirth, int monthBirth, int dayBirth, String post) {
         this.age = Math.max(age, 0);
@@ -25,7 +25,7 @@ public class Person {
     }
 
     public void setAge(int age) {
-        this.age = age;
+        this.age = Math.max(age, 0);
     }
 
     public String getName() {
@@ -41,7 +41,7 @@ public class Person {
     }
 
     public void setCity(String city) {
-        this.city = city;
+        this.city = Objects.requireNonNullElse(city, "Информация не укзана");;
     }
 
     public int getYearBirth() {
@@ -49,7 +49,7 @@ public class Person {
     }
 
     public void setYearBirth(int yearBirth) {
-        this.yearBirth = yearBirth;
+        this.yearBirth = Math.max(yearBirth, 0);
     }
 
     public int getMonthBirth() {
@@ -57,7 +57,7 @@ public class Person {
     }
 
     public void setMonthBirth(int monthBirth) {
-        this.monthBirth = monthBirth;
+        this.monthBirth = Math.max(monthBirth, 0);
     }
 
     public int getDayBirth() {
@@ -65,7 +65,7 @@ public class Person {
     }
 
     public void setDayBirth(int dayBirth) {
-        this.dayBirth = dayBirth;
+        this.dayBirth = Math.max(dayBirth, 0);
     }
 
     public String getPost() {
