@@ -1,6 +1,8 @@
+import transport.Bus;
 import transport.Car;
 import transport.Car.Key;
 import transport.Car.Insurance;
+import transport.Train;
 
 import java.time.LocalDate;
 
@@ -25,13 +27,13 @@ public class Main {
 
 
         Car[] cars = new Car[5];
-        cars[0] = new Car("Lada", "Grande", 1.7, "жёлтый", 2015, "", "Механическая", "Купе", "А232ТЕ", 2, "Летняя", new Key(true, false), new Insurance());
+        cars[0] = new Car("Lada", "Grande", 1.7, "жёлтый", 2015, "", "Механическая", "Купе", "А232ТЕ", 2, "Летняя", new Key(true, false), new Insurance(), 200);
         cars[1] = new Car("Audi", "A8 50 L TDI quattro", 3.0, "Чёрный", 2020, "Германия", "Автоматическая", "Универсал", "В949ОО", 4, "Летняя", new Key(false, true),
-                new Insurance(LocalDate.now().plusYears(2), 30000, "283829401"));
+                new Insurance(LocalDate.now().plusYears(2), 30000, "283829401"), 350);
         cars[2] = new Car("BMW", "Z8", 3.0, "Чёрный", 2021, "Германия", "Автоматическая", "Универсал", "Н923АА", 4, "Летняя", new Key(true, true),
-                new Insurance(LocalDate.now().plusYears(1), 25000, "2829401"));
-        cars[3] = new Car("Kia", "Sportage 4 поколение", 2.4, "Красный", 2018, "Южная Корея", "Механическая", "Седан", "В942АА", 4, "Летняя", new Key(true, false), new Insurance());
-        cars[4] = new Car("Hyundai", "Avante", 1.6, "Оранжевый", 2016, "Южная Корея", "Автоматическая", "Кабриолет", "Е949ОО", 4, "Летняя", new Key(false, false), new Insurance());
+                new Insurance(LocalDate.now().plusYears(1), 25000, "2829401"), 320);
+        cars[3] = new Car("Kia", "Sportage 4 поколение", 2.4, "Красный", 2018, "Южная Корея", "Механическая", "Седан", "В942АА", 4, "Летняя", new Key(true, false), new Insurance(), 400);
+        cars[4] = new Car("Hyundai", "Avante", 1.6, "Оранжевый", 2016, "Южная Корея", "Автоматическая", "Кабриолет", "Е949ОО", 4, "Летняя", new Key(false, false), new Insurance(), 300);
 
         for (Car car : cars) {
            System.out.println(car);
@@ -48,6 +50,26 @@ public class Main {
 
         for (Flower flower : flowers) {
             System.out.println(flower);
+        }
+
+        System.out.println();
+
+        Train[] trains = new Train[2];
+        trains[0] = new Train("Ласточка", "В-901", 2011, "Россия", 301, 3500, "Белорусская", "Минск-Пасажирский", 11);
+        trains[1] = new Train("Ленинград", "D-125", 2019, "Россия", 270, 1700, "Ленинградская", "Ленинград-Пасажирский", 8);
+
+        for (Train train : trains) {
+            System.out.println(train);
+        }
+
+        System.out.println();
+
+        Bus[] buses = new Bus[2];
+        buses[0] = new Bus("Бренд1", "Модель1", 2010, "Россия", "Красно-белый", 210);
+        buses[1] = new Bus("Бренд2", "Модель2", 2015, "Белоруссия", "Красно-чёрный", 301);
+
+        for (Bus bus : buses) {
+            System.out.println(bus);
         }
     }
 }

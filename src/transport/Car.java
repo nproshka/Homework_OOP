@@ -4,59 +4,26 @@ import java.time.LocalDate;
 import java.util.Calendar;
 
 
-public class Car {
+public class Car extends Transport {
 
-    private String brand;
-    private String model;
     double engineCapacity;
-    String color;
-    private int yearProduction;
-    private String countryProduction;
     String transmission;
-    private String body;
+    private final String body;
     String registerNumber;
-    private int seatsNumber;
+    private final int seatsNumber;
     String tyre;
     Key key;
     Insurance insurance;
 
 
     public Car(String brand, String model, double engineCapacity, String color, int yearProduction, String countryProduction, String transmission, String body,
-               String registerNumber, int seatsNumber, String tyre, Key key, Insurance insurance) {
-        if (brand == null || brand.isEmpty() || brand.isBlank()) {
-            this.brand = "default";
-        } else {
-            this.brand = brand;
-        }
-
-        if (model == null || model.isEmpty() || model.isBlank()) {
-            this.model = "default";
-        } else {
-            this.model = model;
-        }
+               String registerNumber, int seatsNumber, String tyre, Key key, Insurance insurance, int maxSpeed) {
+        super(brand, model, yearProduction, countryProduction, color, maxSpeed);
 
         if (engineCapacity > 0) {
             this.engineCapacity = engineCapacity;
         } else {
             this.engineCapacity = 1.5;
-        }
-
-        if (color == null || color.isEmpty() || color.isBlank()) {
-            this.color = "белый";
-        } else {
-            this.color = color;
-        }
-
-        if (yearProduction > 0) {
-            this.yearProduction = yearProduction;
-        } else {
-            this.yearProduction = 2000;
-        }
-
-        if (countryProduction == null || countryProduction.isEmpty() || countryProduction.isBlank()) {
-            this.countryProduction = "default";
-        } else {
-            this.countryProduction = countryProduction;
         }
 
         if (transmission == null || transmission.isEmpty() || transmission.isBlank()) {
@@ -175,15 +142,6 @@ public class Car {
         }
         // Я думаю что зимняя резина всё еще нужна в ноябре а также в марте
     }
-
-    public String getBrand() {
-        return brand;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
     public double getEngineCapacity() {
         return engineCapacity;
     }
@@ -194,26 +152,6 @@ public class Car {
         } else {
             this.engineCapacity = 1.5;
         }
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        if (color == null || color.isEmpty() || color.isBlank()) {
-            this.color = "белый";
-        } else {
-            this.color = color;
-        }
-    }
-
-    public int getYearProduction() {
-        return yearProduction;
-    }
-
-    public String getCountryProduction() {
-        return countryProduction;
     }
 
     public String getTransmission() {
@@ -260,9 +198,9 @@ public class Car {
 
     @Override
     public String toString() {
-        return brand + " " + model + " " + yearProduction + " года выпуска, сборка в стране - " + countryProduction + " цвет кузова - " + color + ", объём двигателя " + engineCapacity + ", коробка передач - " +
-                transmission + ", тип кузова - " + body + ", регистрационный номер - " + registerNumber + ", количество мест - " + seatsNumber + ", резина - " + tyre +
-                " удалённый доступ - " + key.isRemoteStart() + " бесключевой доступ - " + key.isKeyLessAccess() + " срок действия страховки - " +
-                insurance.getValidityPeriod() + ", цена страховки - " + insurance.getCost() + ", номер страховки - " + insurance.getNumber();
+        return getBrand() + " " + getModel() + " " + getYearProduction() + " года выпуска, сборка в стране - " + getCountryProduction() + " цвет кузова - " + getColor() + ", объём двигателя "
+                + engineCapacity + ", коробка передач - " + transmission + ", тип кузова - " + body + ", регистрационный номер - " + registerNumber + ", количество мест - " + seatsNumber + ", резина - " + tyre
+                + " удалённый доступ - " + key.isRemoteStart() + " бесключевой доступ - " + key.isKeyLessAccess() + " срок действия страховки - "
+                + insurance.getValidityPeriod() + ", цена страховки - " + insurance.getCost() + ", номер страховки - " + insurance.getNumber() + " Максимальная скорость - " + getMaxSpeed() + ".";
     }
 }
