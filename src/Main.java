@@ -1,3 +1,4 @@
+import Animals.*;
 import transport.Bus;
 import transport.Car;
 import transport.Car.Key;
@@ -25,7 +26,6 @@ public class Main {
         System.out.println();
 
 
-
         Car[] cars = new Car[5];
         cars[0] = new Car("Lada", "Grande", 1.7, "жёлтый", 2015, "", "Механическая", "Купе", "А232ТЕ", 2, "Летняя", new Key(true, false), new Insurance(), 200);
         cars[1] = new Car("Audi", "A8 50 L TDI quattro", 3.0, "Чёрный", 2020, "Германия", "Автоматическая", "Универсал", "В949ОО", 4, "Летняя", new Key(false, true),
@@ -36,7 +36,7 @@ public class Main {
         cars[4] = new Car("Hyundai", "Avante", 1.6, "Оранжевый", 2016, "Южная Корея", "Автоматическая", "Кабриолет", "Е949ОО", 4, "Летняя", new Key(false, false), new Insurance(), 300);
 
         for (Car car : cars) {
-           System.out.println(car);
+            System.out.println(car);
         }
 
 
@@ -76,5 +76,62 @@ public class Main {
         cars[0].refill();
         buses[0].refill();
         trains[0].refill();
+
+        System.out.println();
+
+        Herbivorous[] herbivores = new Herbivorous[3];
+        herbivores[0] = new Herbivorous("Газель-Зебрик", 5, "Наземно-воздушная", 50, "Растения");
+        herbivores[1] = new Herbivorous("Жираф-Недорослик", 10, "Наземно-воздушная", 10, "Растения");
+        herbivores[2] = new Herbivorous("Лошадь-Мазда", 15, "Наземно-воздушная", 55, "Растения");
+
+        for (Herbivorous herbivore : herbivores) {
+            System.out.println(herbivore);
+        }
+
+        System.out.println();
+
+        Predator[] predators = new Predator[3];
+        predators[0] = new Predator("Гиена-Алексей", 9, "Наземно-воздушная", 55, "Мясо");
+        predators[1] = new Predator("Тигр-Пушок", 11, "Наземно-воздушная", 55, "Мясо");
+        predators[2] = new Predator("Медведь-Тедди", 7, "Наземно-воздушная", 55, "Рыба");
+
+        for (Predator predator : predators) {
+            System.out.println(predator);
+        }
+
+        System.out.println();
+
+        Amphibians[] amphibians = new Amphibians[2];
+        amphibians[0] = new Amphibians("Лягушка-Зелёныш", 3, "Водно-наземная");
+        amphibians[1] = new Amphibians("Уж-пресноводный-Жужа", 2, "Водно-наземная");
+
+        for (Amphibians amphibian : amphibians) {
+            System.out.println(amphibian);
+        }
+
+        System.out.println();
+
+        Flying[] flyings = new Flying[3];
+        flyings[0] = new Flying("Чайка-Рыбак", 4, "Наземно-воздушная", "Летающе-ходящий");
+        flyings[1] = new Flying("Альбатрос-Живоглот", 15, "Наземно-воздушная", "Летающе-ходящий");
+        flyings[2] = new Flying("Сокол-Миша", 15, "Наземно-воздушная", "Летающе-ходящий");
+
+        for (Flying flying : flyings) {
+            System.out.println(flying);
+        }
+
+        System.out.println();
+
+        NonFlyingBird[] nonFlyingBirds = new NonFlyingBird[3];
+        nonFlyingBirds[0] = new NonFlyingBird("Додо-Хохолок", 15, "Наземно-воздушная", "Ходьба");
+        nonFlyingBirds[1] = new NonFlyingBird("Пингвин-Трёхцветик", 15, "Наземно-воздушная", "Ходьба");
+        nonFlyingBirds[2] = new NonFlyingBird("Павлин-Красавчик", 15, "Наземно-воздушная", "Ходьба");
+
+        for (NonFlyingBird nonFlyingBird : nonFlyingBirds) {
+            System.out.println(nonFlyingBird);
+        }
+
+
+
     }
 }
