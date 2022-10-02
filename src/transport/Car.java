@@ -197,6 +197,11 @@ public class Car extends Transport {
     }
 
     @Override
+    public void refill() {
+        System.out.println("Машины нужно заправлять заправлять бензином, дизелем на заправке или заряжать на специальных электроду-парковках, если это электрокар.");
+    }
+
+    @Override
     public String toString() {
         return getBrand() + " " + getModel() + " " + getYearProduction() + " года выпуска, сборка в стране - " + getCountryProduction() + " цвет кузова - " + getColor() + ", объём двигателя "
                 + engineCapacity + ", коробка передач - " + transmission + ", тип кузова - " + body + ", регистрационный номер - " + registerNumber + ", количество мест - " + seatsNumber + ", резина - " + tyre

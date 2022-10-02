@@ -71,5 +71,10 @@ public class Main {
         for (Bus bus : buses) {
             System.out.println(bus);
         }
+        System.out.println();
+
+        cars[0].refill();
+        buses[0].refill();
+        trains[0].refill();
     }
 }

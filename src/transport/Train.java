@@ -70,6 +70,11 @@ public class Train extends Transport {
     }
 
     @Override
+    public void refill() {
+        System.out.println("Поезда нужно заправлять дизелем");
+    }
+
+    @Override
     public String toString() {
         return "Поезд " + getBrand() + ", модель " + getModel() + ", " + getYearProduction() + " года выпуска в стране " + getCountryProduction() + ", скорость передвижения " + getMaxSpeed()
                 + " км/ч, отходит от станции " + startStation + " и следует до станции " + endStation + ". Цена поездки - " + tripPrice + " рублей, в поезде " + numberTrainCars + " вагонов.";
